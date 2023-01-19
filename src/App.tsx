@@ -1,10 +1,10 @@
 import type { Component } from "solid-js";
 
-const clientId = import.meta.env.VITE_CLIENT_ID;
-const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
-const redirectUrl = import.meta.env.VITE_REDIRECT_URI;
-const authEndPoint = import.meta.env.VITE_AUTH_ENDPOINT;
-const responseType = import.meta.env.VITE_RESPONSE_TYPE;
+const clientId: string = import.meta.env.VITE_CLIENT_ID;
+// const clientSecret: string = import.meta.env.VITE_CLIENT_SECRET;
+const redirectUrl: string = import.meta.env.VITE_REDIRECT_URI;
+const authEndPoint: string = import.meta.env.VITE_AUTH_ENDPOINT;
+const responseType: string = import.meta.env.VITE_RESPONSE_TYPE;
 
 const App: Component = () => {
   console.log(authEndPoint);
