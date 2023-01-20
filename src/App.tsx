@@ -28,6 +28,7 @@ const App: Component = () => {
     } catch (err) {
       console.log(err);
     }
+    return token;
   };
 
   createEffect(async () => {
