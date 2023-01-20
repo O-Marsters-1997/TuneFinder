@@ -1,5 +1,6 @@
 import { createSignal, createEffect } from "solid-js";
 import type { Component } from "solid-js";
+import Searchbar from "./components/Searchbar";
 
 const clientId: string = import.meta.env.VITE_CLIENT_ID;
 const clientSecret: string = import.meta.env.VITE_CLIENT_SECRET;
@@ -8,7 +9,7 @@ const authEndPoint: string = import.meta.env.VITE_AUTH_ENDPOINT;
 const responseType: string = import.meta.env.VITE_RESPONSE_TYPE;
 
 const App: Component = () => {
-  const [token, setToken] = createSignal<string | null>("");
+  const [token, setToken] = createSignal<string | undefined>("");
 
   const getAccessToken = async () => {
     const authParameters = {
@@ -43,7 +44,7 @@ const App: Component = () => {
       >
         Click here
       </a>
-      <p>{token()}</p>
+      <Searchbar token={token()} />
     </div>
   );
 };
