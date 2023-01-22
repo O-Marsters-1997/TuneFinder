@@ -6,7 +6,6 @@ const Searchbar: Component = () => {
   const [searchStatus, setSearchStatus] = createSignal<string>("");
 
   const { token } = useAuthorisation();
-  console.log(token);
 
   const search = async () => {
     // Get artist ID
