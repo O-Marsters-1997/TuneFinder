@@ -11,9 +11,9 @@ import {
 
 const AuthorisationContext = createContext();
 
-interface Props {
+type Props = {
   children: JSX.Element;
-}
+};
 
 // testing commit
 

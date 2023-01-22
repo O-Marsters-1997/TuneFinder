@@ -38,7 +38,7 @@
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/restrict-template-expressions": "off",
     "@typescript-eslint/no-misused-promises": "off",
-    "etc/prefer-interface": "off",
+    "@typescript-eslint/consistent-type-definitions": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
