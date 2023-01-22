@@ -1,20 +1,14 @@
 import type { Component } from "solid-js";
-import { createEffect } from "solid-js";
-import Searchbar, { artists, setArtists } from "./components/Searchbar";
-import AuthLink from "./components/dev/AuthLink.Dev";
-import ArtistList from "./components/ArtistList";
+import { Router, Routes, Route } from "@solidjs/router";
+import MainPage from "./pages/Main.Page";
 
 const App: Component = () => {
-  createEffect(() => {
-    console.log(artists());
-  });
   return (
-    <div>
-      <AuthLink />
-      <Searchbar />
-      <ArtistList />
-      <button onClick={() => setArtists(null)}>Click me</button>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" component={MainPage} />
+      </Routes>
+    </Router>
   );
 };
 

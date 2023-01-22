@@ -40,9 +40,11 @@
     "lint-staged": "^13.1.0",
     "prettier": "2.8.3",
     "solid-devtools": "^0.24.7",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "vite-tsconfig-paths": "^4.0.5"
   },
   "dependencies": {
+    "@solidjs/router": "^0.7.0",
     "eslint": "^8.32.0",
     "husky": "^8.0.3",
     "solid-js": "^1.6.6",

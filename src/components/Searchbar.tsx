@@ -1,9 +1,8 @@
 import type { Component } from "solid-js";
 import { createSignal } from "solid-js";
-import { useAuthorisation } from "../contexts/Authorisation.context";
+import { useAuthorisation } from "@contexts/Authorisation.context";
 
 export const [artists, setArtists] = createSignal<any>();
-export const [hello, setHello] = createSignal<string>("hllo");
 
 const Searchbar: Component = () => {
   const [searchStatus, setSearchStatus] = createSignal<string>("");
@@ -21,7 +20,7 @@ const Searchbar: Component = () => {
         },
       };
       const res = await fetch(
-        `https://api.spotify.com/v1/search?q=${searchStatus()}&type=artist`,
+        `https://api.spotify.com/v1/search?q=${searchStatus()}&type=artist&limit=10`,
         artistParameters,
       );
       const data = await res.json();
@@ -42,7 +41,6 @@ const Searchbar: Component = () => {
         onInput={handleChange}
       />
       <button onClick={search}>Click me</button>
-      <button onClick={() => setHello("hello")}>Clcik to set hello</button>
     </div>
   );
 };
