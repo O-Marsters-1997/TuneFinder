@@ -2,8 +2,8 @@ import { createSignal, createEffect } from "solid-js";
 import type { Component } from "solid-js";
 import Searchbar from "./components/Searchbar";
 
-const clientId: string = import.meta.env.VITE_CLIENT_ID;
 const clientSecret: string = import.meta.env.VITE_CLIENT_SECRET;
+const clientId: string = import.meta.env.VITE_CLIENT_ID;
 const redirectUrl: string = import.meta.env.VITE_REDIRECT_URI;
 const authEndPoint: string = import.meta.env.VITE_AUTH_ENDPOINT;
 const responseType: string = import.meta.env.VITE_RESPONSE_TYPE;
