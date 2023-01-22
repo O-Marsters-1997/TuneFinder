@@ -1,5 +1,6 @@
 import type { Component } from "solid-js";
 import { createSignal } from "solid-js";
+import { useAuthorisation } from "../contexts/Authorisation.context";
 
 interface Props {
   token?: string;
@@ -7,6 +8,9 @@ interface Props {
 
 const Searchbar: Component<Props> = (props) => {
   const [searchStatus, setSearchStatus] = createSignal<string>("");
+
+  console.log(useAuthorisation());
+
   const search = async () => {
     // Get artist ID
     if (searchStatus() !== "") {
