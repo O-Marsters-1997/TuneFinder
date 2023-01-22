@@ -1,6 +1,8 @@
 import type { Component } from "solid-js";
+import { lazy } from "solid-js";
 import { Router, Routes, Route } from "@solidjs/router";
-import MainPage from "./pages/Main.Page";
+
+const MainPage = lazy(async () => import("./pages/Main.Page"));
 
 const App: Component = () => {
   return (

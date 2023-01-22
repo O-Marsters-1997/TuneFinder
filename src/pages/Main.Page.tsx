@@ -3,7 +3,7 @@ import Searchbar from "@components/Searchbar";
 import AuthLink from "@components/dev/AuthLink.Dev";
 import ArtistList from "@components/ArtistList";
 
-const MainPage: Component<Props> = () => {
+const MainPage: Component = () => {
   return (
     <div class="main-page-container">
       <AuthLink />
