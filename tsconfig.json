@@ -4,6 +4,12 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "node",
+    "baseUrl": "src",
+    "paths": {
+      "@base/*": ["./*"],
+      "@components/*": ["components/*"],
+      "@contexts/*": ["contexts/*"]
+    },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "jsx": "preserve",

@@ -13,9 +13,7 @@
     "airbnb-typescript/base",
     "plugin:solid/typescript",
     "plugin:prettier/recommended",
-    "prettier",
-    "plugin:import/recommended",
-    "plugin:import/typescript"
+    "prettier"
   ],
   "ignorePatterns": ["*.d.ts"],
 
@@ -29,7 +27,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "solid", "prettier", "jest-dom", "import"],
+  "plugins": ["@typescript-eslint", "solid", "prettier", "jest-dom"],
   "overrides": [],
   "rules": {
     "no-unused-vars": "error",

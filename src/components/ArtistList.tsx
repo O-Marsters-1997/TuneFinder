@@ -1,7 +1,7 @@
 import type { Component } from "solid-js";
 import { For } from "solid-js";
-import { artists } from "./Searchbar";
-import ArtistItem from "./ArtistItem";
+import { artists } from "@components/Searchbar";
+import ArtistItem from "@components/ArtistItem";
 
 const ArtistList: Component = () => {
   return (
