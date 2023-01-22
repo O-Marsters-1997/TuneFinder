@@ -76,6 +76,6 @@ export const AuthorisationProvider: Component<Props> = (props) => {
   );
 };
 
-export const useAuthorisation = () => {
-  return useContext(AuthorisationContext);
+export const useAuthorisation = (): IAuth => {
+  return useContext(AuthorisationContext) as IAuth;
 };

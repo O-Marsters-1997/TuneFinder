@@ -2,14 +2,11 @@ import type { Component } from "solid-js";
 import { createSignal } from "solid-js";
 import { useAuthorisation } from "../contexts/Authorisation.context";
 
-interface Props {
-  token?: string;
-}
-
-const Searchbar: Component<Props> = (props) => {
+const Searchbar: Component = () => {
   const [searchStatus, setSearchStatus] = createSignal<string>("");
 
-  console.log(useAuthorisation());
+  const { token } = useAuthorisation();
+  console.log(token);
 
   const search = async () => {
     // Get artist ID
@@ -18,7 +15,7 @@ const Searchbar: Component<Props> = (props) => {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${props.token}`,
+          Authorization: `Bearer ${token}`,
         },
       };
       const res = await fetch(
