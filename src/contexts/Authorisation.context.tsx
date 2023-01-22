@@ -28,7 +28,6 @@ export const AuthorisationProvider: Component<Props> = (props) => {
   };
 
   onMount(async () => {
-    console.log("setting token");
     setToken(await getAccessToken());
   });
 

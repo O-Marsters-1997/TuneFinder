@@ -2,6 +2,9 @@ import type { Component } from "solid-js";
 import { createSignal } from "solid-js";
 import { useAuthorisation } from "../contexts/Authorisation.context";
 
+export const [artists, setArtists] = createSignal<any>();
+export const [hello, setHello] = createSignal<string>("hllo");
+
 const Searchbar: Component = () => {
   const [searchStatus, setSearchStatus] = createSignal<string>("");
 
@@ -22,7 +25,7 @@ const Searchbar: Component = () => {
         artistParameters,
       );
       const data = await res.json();
-      console.log(data.artists.items[0].name);
+      setArtists(await data.artists.items);
     }
   };
 
@@ -39,6 +42,7 @@ const Searchbar: Component = () => {
         onInput={handleChange}
       />
       <button onClick={search}>Click me</button>
+      <button onClick={() => setHello("hello")}>Clcik to set hello</button>
     </div>
   );
 };
