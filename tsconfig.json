@@ -8,8 +8,10 @@
     "paths": {
       "@base/*": ["./*"],
       "@components/*": ["components/*"],
+      "@common/*": ["components/common/*"],
       "@contexts/*": ["contexts/*"],
-      "@state/*": ["state/*"]
+      "@state/*": ["state/*"],
+      "@theme/*": ["theme/*"]
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

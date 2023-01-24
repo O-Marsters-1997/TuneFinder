@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import solidPlugin from "vite-plugin-solid";
+import suidPlugin from "@suid/vite-plugin";
 import tsconfigPaths from "vite-tsconfig-paths";
 import solid from "vite-plugin-solid"; // or solid-start/vite
 import devtools from "solid-devtools/vite";
@@ -8,6 +9,7 @@ export default defineConfig({
   plugins: [
     tsconfigPaths(),
     solidPlugin(),
+    suidPlugin(),
     devtools({
       /* additional options */
       autoname: true, // e.g. enable autoname

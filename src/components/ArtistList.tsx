@@ -2,6 +2,8 @@ import type { Component } from "solid-js";
 import { For } from "solid-js";
 import { artists } from "@components/Searchbar";
 import ArtistItem from "@components/ArtistItem";
+import Text from "@common/Text";
+import Button from "@common/Button";
 
 const ArtistList: Component = () => {
   return (
@@ -20,6 +22,11 @@ const ArtistList: Component = () => {
       >
         Click me
       </button>
+      <Text text="hello what are you talking about" />
+      {/* <Button
+        text="please click me boy"
+        onClick={() => console.log("testing this pattern")}
+      ></Button> */}
     </>
   );
 };

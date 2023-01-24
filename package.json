@@ -45,9 +45,15 @@
   },
   "dependencies": {
     "@solidjs/router": "^0.7.0",
+    "@stitches/core": "^1.2.8",
+    "@suid/icons-material": "^0.5.5",
+    "@suid/material": "^0.9.1",
+    "@suid/vite-plugin": "^0.1.2",
     "eslint": "^8.32.0",
     "husky": "^8.0.3",
     "solid-js": "^1.6.6",
+    "solid-styled-components": "^0.28.5",
+    "solid-transition-group": "^0.0.12",
     "vite": "^4.0.3",
     "vite-plugin-solid": "^2.5.0"
   },
