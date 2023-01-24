@@ -1,5 +1,5 @@
 import type { Component } from "solid-js";
-import { createSignal } from "solid-js";
+import { createSignal, createEffect, on } from "solid-js";
 import { useAuthorisation } from "@contexts/Authorisation.context";
 
 export const [artists, setArtists] = createSignal<any>();
@@ -31,6 +31,12 @@ const Searchbar: Component = () => {
   const handleChange = (e: any) => {
     setSearchStatus(e.currentTarget.value);
   };
+
+  createEffect(
+    on([searchStatus], () => {
+      console.log("hello world");
+    }),
+  );
 
   return (
     <div>
