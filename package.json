@@ -9,7 +9,8 @@
     "serve": "vite preview",
     "prepare": "husky install",
     "lint:pre-commit": "lint-staged && git add -A",
-    "lint:all": "eslint"
+    "lint:all": "eslint",
+    "prettify:test": "prettier"
   },
   "license": "MIT",
   "lint-staged": {

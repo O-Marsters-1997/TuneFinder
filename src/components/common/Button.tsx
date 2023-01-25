@@ -1,17 +1,14 @@
 import type { Component } from "solid-js";
-import { ButtonBase, ButtonRounded, ButtonProps } from "../lib/variants/button";
-
-const variantMap = {
-  base: ButtonBase,
-  rounded: ButtonRounded,
-} as any;
+import { ButtonProps } from "../lib/variants/button";
+import { getButton } from "@base/theme/variant.helpers";
 
 const Button: Component<ButtonProps> = ({ text, variant, onClick }) => {
-  const Component = variantMap[variant];
+  const Button = getButton(variant);
+
   return (
-    <Component text={text} variant="base" onClick={onClick}>
+    <Button text={text} variant={variant ?? "base"} onClick={onClick}>
       {text}
-    </Component>
+    </Button>
   );
 };
 
