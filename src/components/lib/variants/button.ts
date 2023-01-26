@@ -3,9 +3,9 @@ import Button, { ButtonProps as SolidButtonProps } from "@suid/material/Button";
 
 export type ButtonProps = {
   text: string;
-  variant?: any;
   onClick: () => void;
-} & SolidButtonProps;
+  variant?: CSS.ButtonVariant;
+} & Omit<SolidButtonProps, "variant" | "type">;
 
 export const ButtonBase = styled(Button)<ButtonProps>`
   && {
@@ -16,7 +16,7 @@ export const ButtonBase = styled(Button)<ButtonProps>`
 
 export const ButtonRounded = styled(ButtonBase)`
   && {
-    border-radius: 20%;
+    border-radius: 50%;
   }
 `;
 

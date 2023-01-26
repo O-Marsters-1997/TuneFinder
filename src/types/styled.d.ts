@@ -1,4 +1,5 @@
 declare namespace CSS {
+  // Colot variants
   interface ColorVariant {
     base: string;
     modifierOne?: string;
@@ -7,4 +8,7 @@ declare namespace CSS {
     modifierFour?: string;
     modifierFive?: string;
   }
+  // Variants
+  // Buttons
+  type ButtonVariant = "base" | "rounded";
 }

@@ -26,6 +26,7 @@ const ArtistList: Component = () => {
       <Button
         text="please click me boy"
         onClick={() => console.log("testing this pattern")}
+        variant="rounded"
       ></Button>
     </>
   );
