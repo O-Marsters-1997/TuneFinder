@@ -1,4 +1,6 @@
+import type { Component } from "solid-js";
 import "solid-styled-components";
+import { ButtonProps } from "@components/lib/variants/button";
 
 declare module "solid-styled-components" {
   export interface DefaultTheme {
@@ -7,8 +9,8 @@ declare module "solid-styled-components" {
     };
     variants: {
       button: {
-        base: any;
-        rounded: any;
+        base: Component<ButtonProps>;
+        rounded: Component<ButtonProps>;
       };
     };
   }

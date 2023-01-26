@@ -1,11 +1,11 @@
-import { styled, DefaultTheme } from "solid-styled-components";
-import Button from "@suid/material/Button";
+import { styled } from "solid-styled-components";
+import Button, { ButtonProps as SolidButtonProps } from "@suid/material/Button";
 
 export type ButtonProps = {
   text: string;
   variant?: any;
   onClick: () => void;
-};
+} & SolidButtonProps;
 
 export const ButtonBase = styled(Button)<ButtonProps>`
   && {
