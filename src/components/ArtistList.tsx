@@ -23,10 +23,10 @@ const ArtistList: Component = () => {
         Click me
       </button>
       <Text text="hello what are you talking about" />
-      {/* <Button
+      <Button
         text="please click me boy"
         onClick={() => console.log("testing this pattern")}
-      ></Button> */}
+      ></Button>
     </>
   );
 };

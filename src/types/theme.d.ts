@@ -1,13 +1,23 @@
 import "solid-styled-components";
 
 declare module "solid-styled-components" {
-  export interface DefaultTheme {}
+  export interface DefaultTheme {
+    palette: {
+      primary: Styles.PaletteOptions;
+    };
+    variants: {
+      button: {
+        base: any;
+        rounded: any;
+      };
+    };
+  }
 }
 
 declare module Styles {
-  interface Palette {
+  interface PaletteOptions {
     main: CSS.ColorVariant;
-    contrastText: CSS.ColorVariant;
+    alternative?: CSS.ColorVariant;
     muted?: CSS.ColorVariant;
     additional?: CSS.ColorVariant;
   }
