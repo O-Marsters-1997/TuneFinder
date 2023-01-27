@@ -11,7 +11,8 @@
       "@common/*": ["components/common/*"],
       "@contexts/*": ["contexts/*"],
       "@state/*": ["state/*"],
-      "@theme/*": ["theme/*"]
+      "@theme/*": ["theme/*"],
+      "@myTypes/*": ["types/*"]
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

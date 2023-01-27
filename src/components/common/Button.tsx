@@ -1,14 +1,19 @@
 import type { Component } from "solid-js";
-import { ButtonProps } from "../lib/variants/button";
+import { buttonVariants } from "@myTypes/constants";
 import { getButton } from "@base/theme/variant.helpers";
+import { ButtonProps } from "../lib/variants/button";
 
-const Button: Component<ButtonProps> = ({ text, variant, onClick }) => {
-  const Button = getButton(variant);
+const Button: Component<ButtonProps> = (props) => {
+  const ButtonVariant = getButton(props.variant ?? buttonVariants.base);
 
   return (
-    <Button text={text} variant={variant ?? "base"} onClick={onClick}>
-      {text}
-    </Button>
+    <ButtonVariant
+      text={props.text}
+      variant={props.variant}
+      onClick={props.onClick}
+    >
+      {props.text}
+    </ButtonVariant>
   );
 };
 

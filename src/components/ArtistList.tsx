@@ -25,9 +25,10 @@ const ArtistList: Component = () => {
       <Text text="hello what are you talking about" />
       <Button
         text="please click me boy"
-        onClick={() => console.log("testing this pattern")}
-        variant="rounded"
-      ></Button>
+        onClick={() => {
+          console.log("testing this pattern");
+        }}
+      />
     </>
   );
 };
