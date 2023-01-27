@@ -1,5 +1,5 @@
 // Typography
-export const fontSizeModifiers: CSS.FontSizeModifersMap = {
+export const fontSizeModifiers: CSS.FontSizeModifiersMap = {
   x1: 0.5,
   x2: 0.6,
   x3: 0.7,
@@ -16,7 +16,7 @@ export const fontSizeModifiers: CSS.FontSizeModifersMap = {
 // Variants
 
 // Buttons
-export const buttonVariants = {
+export const buttonVariants: CSS.ButtonVariantModifiersMap = {
   base: "base",
   rounded: "rounded",
 };
