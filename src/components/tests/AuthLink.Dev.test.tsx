@@ -4,7 +4,6 @@ import Button from "../common/Button";
 
 describe("Timer component", () => {
   it("should assert some dummy assertion", () => {
-    console.log(Button);
     render(() => (
       <Button
         text="hello"

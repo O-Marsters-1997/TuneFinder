@@ -1,4 +1,19 @@
 // Typography
+
+export const textVariants: CSS.TextVariantsMap = {
+  h1: "h1",
+  h2: "h2",
+  h3: "h3",
+  h4: "h4",
+  h5: "h5",
+  h6: "h6",
+  body1: "body1",
+  body2: "body2",
+  caption: "caption",
+  subtitle1: "subtitle1",
+  subtitle2: "subtitle2",
+};
+
 export const fontSizeModifiers: CSS.FontSizeModifiersMap = {
   x1: 0.5,
   x2: 0.6,
@@ -23,9 +38,20 @@ export const viewComponents: CSS.ViewComponentsMap = {
   article: "article",
 };
 
+export const textComponents: CSS.TextComponentsMap = {
+  h1: "h1",
+  h2: "h2",
+  h3: "h3",
+  h4: "h4",
+  h5: "h5",
+  h6: "h6",
+  p: "p",
+};
+
 export const components: CSS.ComponentsMap = {
   View: "div",
   Button: "button",
+  Text: "p",
 };
 
 // Variants

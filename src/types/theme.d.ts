@@ -2,6 +2,7 @@ import type { Component } from "solid-js";
 import "solid-styled-components";
 import { ButtonProps } from "@components/lib/variants/button";
 import { Props as ViewProps } from "@components/lib/variants/view";
+import { Props as TextProps } from "@components/lib/variants/text";
 
 declare module "solid-styled-components" {
   export interface DefaultTheme {
@@ -9,12 +10,25 @@ declare module "solid-styled-components" {
       primary: Styles.PaletteOptions;
     };
     variants: {
+      view: {
+        base: Component<ViewProps>;
+      };
+      text: {
+        h1: Component<TextProps>;
+        h2: Component<TextProps>;
+        h3: Component<TextProps>;
+        h4: Component<TextProps>;
+        h5: Component<TextProps>;
+        h6: Component<TextProps>;
+        body1: Component<TextProps>;
+        body2: Component<TextProps>;
+        caption: Component<TextProps>;
+        subtitle1: Component<TextProps>;
+        subtitle2: Component<TextProps>;
+      };
       button: {
         base: Component<ButtonProps>;
         rounded: Component<ButtonProps>;
-      };
-      view: {
-        base: Component<ViewProps>;
       };
     };
   }

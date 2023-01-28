@@ -1,40 +1,23 @@
 import type { Component } from "solid-js";
-import { Typography } from "@suid/material";
-import { styled } from "solid-styled-components";
+import { Props } from "@components/lib/variants/text";
+import { textVariants } from "@myTypes/constants";
+import { getText } from "@theme/variant.helpers";
+import { getTextVariant } from "@utils/style/style.helpers";
 
-type StyleProps = {
-  colorvariant?: string;
-  lineheight?: number;
-  sizeadjust?: number;
-};
-
-export const add = (num1: number, num2: number) => {
-  return num1 + num2;
-};
-
-type Props = {
-  text: string;
-} & StyleProps;
-
-const getColorVariant = (color: string) => {
-  return color;
-};
-
-const StyledText = styled(Typography)<Props>`
-  color: ${({ colorvariant }) => colorvariant && getColorVariant(colorvariant)};
-  line-height: ${({ lineheight }) => lineheight && lineheight};
-`;
-
-const Text: Component<Props> = (props) => {
+const Text: Component<Props> = (_props) => {
+  const props = mergeProps({ variant: textVariants.body1 }, _props);
+  const TextVariant = getText(props.variant);
   return (
-    <StyledText
+    <TextVariant
       text={props.text}
+      variant={props.variant}
+      as={getTextVariant(props.variant)}
       colorvariant={props.colorvariant}
       lineheight={props.lineheight}
       sizeadjust={props.sizeadjust}
     >
       {props.text}
-    </StyledText>
+    </TextVariant>
   );
 };
 

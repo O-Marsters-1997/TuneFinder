@@ -23,7 +23,7 @@ const ArtistList: Component = () => {
       >
         Click me
       </button>
-      <Text text="hello what are you talking about" />
+      <Text text=" what are you talking about" />
       <Button
         text="please click me boy"
         onClick={() => {
