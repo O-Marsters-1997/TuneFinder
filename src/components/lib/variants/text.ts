@@ -8,6 +8,7 @@ type StyleTextProps = {
   lineheight?: number;
   sizeadjust?: number;
   fontStyle?: CSS.FontStyle;
+  style?: JSX.CSSProperties;
 };
 
 export type TextProps = {

@@ -4,26 +4,30 @@ import { styled, DefaultTheme } from "solid-styled-components";
 type StyleViewProps = {
   height?: string;
   width?: string;
+  maxWidth?: string;
+  maxHeight?: string;
   backgroundColor?: string;
   theme?: DefaultTheme;
+  style?: JSX.CSSProperties;
 };
 
 export type ViewProps = {
   variant?: CSS.ViewVariants;
   children?: JSX.Element;
   as?: CSS.ViewComponents;
-  height?: string;
-  width?: string;
   backgroundColor?: string;
 } & StyleViewProps;
 
 const ViewOtherStyles = (props: ViewProps): string => {
-  const { height, width, backgroundColor, theme } = props;
   return `
-    height: ${height && height};
-    width: ${width && width};
+    height: ${props.height && props.height};
+    width: ${props.width && props.width};
+    max-height: ${props.maxHeight && props.maxHeight};
+    max-width: ${props.maxWidth && props.maxWidth};
     background-color: ${
-      backgroundColor ? backgroundColor : theme?.palette.primary.main.base
+      props.backgroundColor
+        ? props.backgroundColor
+        : props.theme?.palette.primary.main.base
     };
   `;
 };
