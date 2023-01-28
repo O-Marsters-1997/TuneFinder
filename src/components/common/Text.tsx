@@ -7,7 +7,6 @@ import { getTextVariant } from "@utils/style/style.helpers";
 
 const Text: Component<Props> = (_props) => {
   const props = mergeProps({ variant: textVariants.body1 }, _props);
-
   const { text, variant, colorvariant, lineheight, sizeadjust } = props;
 
   const TextVariant = getText(props.variant);

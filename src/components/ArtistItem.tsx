@@ -1,4 +1,5 @@
 import { Component } from "solid-js";
+import Text from "@common/Text";
 import { artistId, setArtistId } from "@state/artistId";
 
 type Props = {
@@ -6,18 +7,19 @@ type Props = {
 };
 
 const ArtistItem: Component<Props> = (props) => {
+  const { artist } = props;
   const artistIsSelected = () => {
     return props.artist.id === artistId() ?? false;
   };
 
   const handleSelectArtist = () => {
-    setArtistId(props.artist.id);
+    setArtistId(artist.id);
   };
 
   return (
     <>
       <div style={{ display: "flex" }}>
-        <p>{props.artist.name}</p>
+        <Text text={artist.name} />
         {artistIsSelected() && (
           <p style={{ color: "green" }}>This artist is selected</p>
         )}
