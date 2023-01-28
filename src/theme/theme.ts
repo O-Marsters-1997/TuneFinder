@@ -21,7 +21,7 @@ export const theme: DefaultTheme = {
       other: viewVariantsMap.other,
     },
     text: {
-      base: textVariantsMap.base,
+      body1: textVariantsMap.body1,
       h1: textVariantsMap.h1,
       h2: textVariantsMap.h2,
       h3: textVariantsMap.h3,

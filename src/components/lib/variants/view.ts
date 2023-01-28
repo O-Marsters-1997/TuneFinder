@@ -1,7 +1,7 @@
-import type { Component, JSX } from "solid-js";
-import { styled, css, DefaultTheme } from "solid-styled-components";
+import type { JSX } from "solid-js";
+import { styled, DefaultTheme } from "solid-styled-components";
 
-export type StyleViewProps = {
+type StyleViewProps = {
   height?: string;
   width?: string;
   backgroundColor?: string;
@@ -17,7 +17,7 @@ export type ViewProps = {
   backgroundColor?: string;
 } & StyleViewProps;
 
-export const ViewOtherStyles = (props: ViewProps): string => {
+const ViewOtherStyles = (props: ViewProps): string => {
   const { height, width, backgroundColor, theme } = props;
   return `
     height: ${height && height};
@@ -28,11 +28,11 @@ export const ViewOtherStyles = (props: ViewProps): string => {
   `;
 };
 
-export const ViewBase = styled.div<ViewProps>`
+const ViewBase = styled.div<ViewProps>`
   ${(props) => ViewOtherStyles(props)}
 `;
 
-export const ViewOther = styled(ViewBase)<ViewProps>`
+const ViewOther = styled(ViewBase)<ViewProps>`
   ${(props) => ViewOtherStyles(props)};
   border: 5px solid orange;
 `;

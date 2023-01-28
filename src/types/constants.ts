@@ -7,7 +7,7 @@ export const textVariants: CSS.TextVariantsMap = {
   h4: "h4",
   h5: "h5",
   h6: "h6",
-  base: "base",
+  body1: "body1",
   body2: "body2",
   caption: "caption",
   subtitle1: "subtitle1",

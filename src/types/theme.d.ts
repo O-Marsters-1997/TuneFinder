@@ -1,8 +1,8 @@
 import type { Component } from "solid-js";
 import "solid-styled-components";
 import { ButtonProps } from "@components/lib/variants/button";
-import { Props as ViewProps } from "@components/lib/variants/view";
-import { Props as TextProps } from "@components/lib/variants/text";
+import { ViewProps } from "@components/lib/variants/view";
+import { TextProps } from "@components/lib/variants/text";
 
 declare module "solid-styled-components" {
   export interface DefaultTheme {
@@ -15,13 +15,13 @@ declare module "solid-styled-components" {
         other: Component<ViewProps>;
       };
       text: {
+        body1: Component<TextProps>;
         h1: Component<TextProps>;
         h2: Component<TextProps>;
         h3: Component<TextProps>;
         h4: Component<TextProps>;
         h5: Component<TextProps>;
         h6: Component<TextProps>;
-        base: Component<TextProps>;
         body2: Component<TextProps>;
         caption: Component<TextProps>;
         subtitle1: Component<TextProps>;

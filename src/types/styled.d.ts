@@ -15,7 +15,7 @@ declare global {
     // Typograpghy
 
     type TextVariants =
-      | "base"
+      | "body1"
       | "h1"
       | "h2"
       | "h3"
