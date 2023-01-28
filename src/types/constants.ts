@@ -13,10 +13,30 @@ export const fontSizeModifiers: CSS.FontSizeModifiersMap = {
   x11: 1.5,
 };
 
+// Components
+
+export const viewComponents: CSS.ViewComponentsMap = {
+  div: "div",
+  span: "span",
+  main: "main",
+  aside: "aside",
+  article: "article",
+};
+
+export const components: CSS.ComponentsMap = {
+  View: "div",
+  Button: "button",
+};
+
 // Variants
 
+// Views
+export const viewVariants: CSS.ViewVariantsMap = {
+  base: "base",
+};
+
 // Buttons
-export const buttonVariants: CSS.ButtonVariantModifiersMap = {
+export const buttonVariants: CSS.ButtonVariantsMap = {
   base: "base",
   rounded: "rounded",
 };

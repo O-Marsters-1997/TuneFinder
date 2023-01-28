@@ -1,16 +1,27 @@
+import type { JSX } from "solid-js";
 import { styled } from "solid-styled-components";
-import Box from "@suid/material/Box";
 
 export type StyleViewProps = {
-  height: string;
-  width: string;
+  height?: string;
+  width?: string;
+  backgroundColor?: string;
 };
 
-export type ViewProps = {
-  component: any;
+export type Props = {
+  variant?: CSS.ViewVariants;
+  children?: JSX.Element;
+  as?: CSS.ViewComponents;
 } & StyleViewProps;
 
-export const ViewBase = styled(Box)`
+export const ViewBase = styled.div<Props>`
   height: ${({ height }) => height && height};
   width: ${({ width }) => width && width};
+  background-color: ${(props) =>
+    props.backgroundColor
+      ? props.backgroundColor
+      : props.theme?.palette.primary.main.base};
 `;
+
+export const viewVariantsMap = {
+  base: ViewBase,
+};

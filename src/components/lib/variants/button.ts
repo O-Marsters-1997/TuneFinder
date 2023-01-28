@@ -1,18 +1,20 @@
+// import { styled } from "solid-styled-components";
+import type { Component } from "solid-js";
 import { styled } from "solid-styled-components";
-import Button, { ButtonProps as SolidButtonProps } from "@suid/material/Button";
+import { ButtonProps as SolidButtonProps } from "@suid/material/Button";
 
 export type ButtonProps = {
   text: string;
   onClick: () => void;
-  variant?: CSS.ButtonVariant;
+  variant?: CSS.ButtonVariants;
 } & Omit<SolidButtonProps, "variant" | "type">;
 
-export const ButtonBase = styled(Button)<ButtonProps>`
+export const ButtonBase = styled.button<ButtonProps>`
   && {
     background-color: red;
     cursor: pointer;
   }
-`;
+` as Component<ButtonProps>;
 
 export const ButtonRounded = styled(ButtonBase)`
   && {

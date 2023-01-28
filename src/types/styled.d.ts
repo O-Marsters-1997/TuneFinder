@@ -25,11 +25,26 @@ declare namespace CSS {
 
   type FontSizeModifiersMap = { [modifier in FontSizeModifiers]: number };
 
+  // Components
+
+  type ViewComponents = "div" | "span" | "main" | "aside" | "article";
+
+  type ViewComponentsMap = { [component in ViewComponents]: ViewComponents };
+
+  type Components = "View" | "Button";
+
+  type ComponentsMap = { [component in Components]: string };
+
   // Variants
   // Buttons
-  type ButtonVariant = "base" | "rounded";
 
-  type ButtonVariantModifiersMap = {
-    [modifier in ButtonVariant]: ButtonVariant;
+  type ViewVariants = "base";
+
+  type ViewVariantsMap = { [variant in ViewVariants]: ViewVariants };
+
+  type ButtonVariants = "base" | "rounded";
+
+  type ButtonVariantsMap = {
+    [variant in ButtonVariants]: ButtonVariants;
   };
 }

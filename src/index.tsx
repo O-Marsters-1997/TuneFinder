@@ -1,18 +1,20 @@
 /* @refresh reload */
 import { render } from "solid-js/web";
 import { ThemeProvider } from "solid-styled-components";
-import { theme } from "./theme/theme";
 import App from "@base/App";
 import { AuthorisationProvider } from "@contexts/Authorisation.context";
+import { HopeProvider } from "@hope-ui/solid";
+import { theme } from "./theme/theme";
 
 render(
   () => (
-    <ThemeProvider theme={theme}>
-      <AuthorisationProvider>
-        e
-        <App />
-      </AuthorisationProvider>
-    </ThemeProvider>
+    <HopeProvider>
+      <ThemeProvider theme={theme}>
+        <AuthorisationProvider>
+          <App />
+        </AuthorisationProvider>
+      </ThemeProvider>
+    </HopeProvider>
   ),
   document.getElementById("root") as HTMLElement,
 );

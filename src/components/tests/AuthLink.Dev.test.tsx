@@ -1,10 +1,18 @@
 import { describe, it, expect } from "vitest";
 import { render } from "solid-testing-library";
-import Timer from "../Timer";
+import Button from "../common/Button";
 
 describe("Timer component", () => {
   it("should assert some dummy assertion", () => {
-    render(() => <Timer />);
+    console.log(Button);
+    render(() => (
+      <Button
+        text="hello"
+        onClick={() => {
+          console.log("hello");
+        }}
+      />
+    ));
     expect(1).toBeTruthy();
   });
 });

@@ -1,11 +1,21 @@
 import type { Component } from "solid-js";
+import { Props } from "components/lib/variants/view";
+import { viewVariants, viewComponents } from "@myTypes/constants";
+import { getView } from "@base/theme/variant.helpers";
 
-type Props = {
-  component: any;
-};
+const View: Component<Props> = (props) => {
+  const ViewVariant = getView(props.variant ?? viewVariants.base);
 
-const View: Component<Props> = () => {
-  return <div>this is a View</div>;
+  return (
+    <ViewVariant
+      variant={props.variant}
+      height={props.height}
+      width={props.width}
+      as={props.as ?? viewComponents.div}
+    >
+      {props.children}
+    </ViewVariant>
+  );
 };
 
 export default View;

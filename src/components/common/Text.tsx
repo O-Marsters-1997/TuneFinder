@@ -8,6 +8,10 @@ type StyleProps = {
   sizeadjust?: number;
 };
 
+export const add = (num1: number, num2: number) => {
+  return num1 + num2;
+};
+
 type Props = {
   text: string;
 } & StyleProps;
@@ -21,20 +25,15 @@ const StyledText = styled(Typography)<Props>`
   line-height: ${({ lineheight }) => lineheight && lineheight};
 `;
 
-const Text: Component<Props> = ({
-  text,
-  colorvariant,
-  lineheight,
-  sizeadjust,
-}) => {
+const Text: Component<Props> = (props) => {
   return (
     <StyledText
-      text={text}
-      colorvariant={colorvariant}
-      lineheight={lineheight}
-      sizeadjust={sizeadjust}
+      text={props.text}
+      colorvariant={props.colorvariant}
+      lineheight={props.lineheight}
+      sizeadjust={props.sizeadjust}
     >
-      {text}
+      {props.text}
     </StyledText>
   );
 };
