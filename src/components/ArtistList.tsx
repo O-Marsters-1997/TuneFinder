@@ -1,10 +1,15 @@
 import type { Component } from "solid-js";
+import { styled } from "solid-styled-components";
 import { For } from "solid-js";
 import { artists } from "@components/Searchbar";
 import ArtistItem from "@components/ArtistItem";
 import Text from "@common/Text";
 import Button from "@common/Button";
 import View from "@common/View";
+
+const StyledText = styled(Text)`
+  color: green;
+`;
 
 const ArtistList: Component = () => {
   return (
@@ -16,21 +21,16 @@ const ArtistList: Component = () => {
           </>
         )}
       </For>
-      <button
-        onClick={() => {
-          console.log("hello world");
-        }}
-      >
-        Click me
-      </button>
-      <Text text=" what are you talking about" />
+      <StyledText text=" what are you talking about" variant="h1" />
       <Button
         text="please click me boy"
         onClick={() => {
           console.log("testing this pattern");
         }}
+        variant="rounded"
+        colorVariant="green"
       />
-      <View height="500px" width="500px" />
+      <View height="500px" width="500px" variant="other" />
     </>
   );
 };

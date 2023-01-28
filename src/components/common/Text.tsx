@@ -5,21 +5,21 @@ import { textVariants } from "@myTypes/constants";
 import { getText } from "@theme/variant.helpers";
 import { getTextVariant } from "@utils/style/style.helpers";
 
-const Text: Component<Props> = (_props) => {
-  const props = mergeProps({ variant: textVariants.body1 }, _props);
-  const { text, variant, colorvariant, lineheight, sizeadjust } = props;
+const Text: Component<Props> = (props) => {
+  // const props = mergeProps({ variant: textVariants.base }, _props);
 
-  const TextVariant = getText(props.variant);
+  const TextVariant = getText(props.variant ?? "base");
+
   return (
     <TextVariant
-      text={text}
-      variant={variant}
-      as={getTextVariant(variant)}
-      colorvariant={colorvariant}
-      lineheight={lineheight}
-      sizeadjust={sizeadjust}
+      text={props.text}
+      variant={props.variant}
+      as={getTextVariant(props.variant ?? "base")}
+      colorvariant={props.colorvariant}
+      lineheight={props.lineheight}
+      sizeadjust={props.sizeadjust}
     >
-      {text}
+      {props.text}
     </TextVariant>
   );
 };

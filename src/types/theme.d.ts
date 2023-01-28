@@ -12,6 +12,7 @@ declare module "solid-styled-components" {
     variants: {
       view: {
         base: Component<ViewProps>;
+        other: Component<ViewProps>;
       };
       text: {
         h1: Component<TextProps>;
@@ -20,7 +21,7 @@ declare module "solid-styled-components" {
         h4: Component<TextProps>;
         h5: Component<TextProps>;
         h6: Component<TextProps>;
-        body1: Component<TextProps>;
+        base: Component<TextProps>;
         body2: Component<TextProps>;
         caption: Component<TextProps>;
         subtitle1: Component<TextProps>;

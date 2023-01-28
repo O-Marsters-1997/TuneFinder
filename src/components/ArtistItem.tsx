@@ -21,7 +21,11 @@ const ArtistItem: Component<Props> = (props) => {
       <div style={{ display: "flex" }}>
         <Text text={artist.name} />
         {artistIsSelected() && (
-          <p style={{ color: "green" }}>This artist is selected</p>
+          <Text
+            text="this artist is selected"
+            variant="h1"
+            colorvariant="green"
+          />
         )}
         <button onClick={handleSelectArtist}>click me</button>
       </div>

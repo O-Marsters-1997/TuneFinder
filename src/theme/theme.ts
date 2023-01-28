@@ -18,15 +18,16 @@ export const theme: DefaultTheme = {
   variants: {
     view: {
       base: viewVariantsMap.base,
+      other: viewVariantsMap.other,
     },
     text: {
+      base: textVariantsMap.base,
       h1: textVariantsMap.h1,
       h2: textVariantsMap.h2,
       h3: textVariantsMap.h3,
       h4: textVariantsMap.h4,
       h5: textVariantsMap.h5,
       h6: textVariantsMap.h6,
-      body1: textVariantsMap.body1,
       body2: textVariantsMap.body2,
       caption: textVariantsMap.caption,
       subtitle1: textVariantsMap.subtitle1,

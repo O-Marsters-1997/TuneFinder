@@ -1,4 +1,4 @@
-import type { JSX } from "solid-js";
+import type { Component, JSX } from "solid-js";
 import { styled } from "solid-styled-components";
 
 import { getColorVariant } from "@utils/style/style.helpers";
@@ -17,11 +17,12 @@ export type Props = {
   children?: JSX.Element;
 } & StyleProps;
 
-const StyledText = styled.p<Props>`
+const StyledText = styled("p")<Props>`
   color: ${({ colorvariant }) => colorvariant && getColorVariant(colorvariant)};
   line-height: ${({ lineheight }) => lineheight && lineheight};
   font-style: ${({ fontStyle }) => fontStyle && fontStyle};
-`;
+  background-color: blue;
+` as Component<Props>;
 
 const StyledH1 = styled(StyledText)`
   font-family: "Arial";
@@ -59,12 +60,6 @@ const StyledH6 = styled(StyledText)`
   font-weight: 800;
 `;
 
-const StyledBody1 = styled(StyledText)`
-  font-family: "Arial";
-  font-size: 12px;
-  font-weight: 800;
-`;
-
 const StyledBody2 = styled(StyledText)`
   font-family: "Arial";
   font-size: 32px;
@@ -90,13 +85,13 @@ const StyledSubtitle2 = styled(StyledText)`
 `;
 
 export const textVariantsMap = {
+  base: StyledText,
   h1: StyledH1,
   h2: StyledH2,
   h3: StyledH3,
   h4: StyledH4,
   h5: StyledH5,
   h6: StyledH6,
-  body1: StyledBody1,
   body2: StyledBody2,
   caption: StyledCaption,
   subtitle1: StyledSubtitle1,

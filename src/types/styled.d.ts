@@ -15,13 +15,13 @@ declare global {
     // Typograpghy
 
     type TextVariants =
+      | "base"
       | "h1"
       | "h2"
       | "h3"
       | "h4"
       | "h5"
       | "h6"
-      | "body1"
       | "body2"
       | "caption"
       | "subtitle1"
@@ -65,7 +65,7 @@ declare global {
     // Variants
     // Buttons
 
-    type ViewVariants = "base";
+    type ViewVariants = "base" | "other";
 
     type ViewVariantsMap = { [variant in ViewVariants]: ViewVariants };
 

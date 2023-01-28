@@ -7,7 +7,7 @@ export const textVariants: CSS.TextVariantsMap = {
   h4: "h4",
   h5: "h5",
   h6: "h6",
-  body1: "body1",
+  base: "base",
   body2: "body2",
   caption: "caption",
   subtitle1: "subtitle1",
@@ -59,6 +59,7 @@ export const components: CSS.ComponentsMap = {
 // Views
 export const viewVariants: CSS.ViewVariantsMap = {
   base: "base",
+  other: "other",
 };
 
 // Buttons

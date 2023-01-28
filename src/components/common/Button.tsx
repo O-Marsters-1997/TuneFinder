@@ -11,6 +11,7 @@ const Button: Component<ButtonProps> = (props) => {
       text={props.text}
       variant={props.variant}
       onClick={props.onClick}
+      colorVariant={props.colorVariant}
     >
       {props.text}
     </ButtonVariant>
