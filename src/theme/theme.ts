@@ -1,7 +1,8 @@
 import { DefaultTheme } from "solid-styled-components";
-import { buttonVariantsMap } from "@components/lib/variants/button";
-import { viewVariantsMap } from "@components/lib/variants/view";
-import { textVariantsMap } from "@components/lib/variants/text";
+import useComponentVariants from "@hooks/useComponentVariants";
+
+const { viewVariantsMap, textVariantsMap, buttonVariantsMap } =
+  useComponentVariants;
 
 export const theme: DefaultTheme = {
   palette: {

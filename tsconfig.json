@@ -12,6 +12,7 @@
       "@contexts/*": ["contexts/*"],
       "@state/*": ["state/*"],
       "@utils/*": ["utils/*"],
+      "@hooks/*": ["hooks/*"],
       "@theme/*": ["theme/*"],
       "@myTypes/*": ["types/*"]
     },
