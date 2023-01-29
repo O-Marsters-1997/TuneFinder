@@ -30,7 +30,16 @@ const ArtistList: Component = () => {
         variant="rounded"
         colorVariant="green"
       />
+      <Button
+        text="please click me boy"
+        onClick={() => {
+          console.log("testing this pattern");
+        }}
+        variant="rounded"
+        colorVariant="green"
+      />
       <View height="500px" width="500px" variant="other" />
+      <div>Hello world</div>
     </>
   );
 };

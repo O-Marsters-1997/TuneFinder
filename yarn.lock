@@ -1424,6 +1424,13 @@
   resolved "https://registry.yarnpkg.com/@solidjs/router/-/router-0.7.0.tgz#5f8f1289caf4a1eb24e57cbe93e6dde639b04a6e"
   integrity sha512-8HI84twe5FjYRebSLMAhtkL9bRuTDIlxJK56kjfjU9WKGoUCTaWpCnkuj8Hqde1bWZ0X+GOZxKDfNkn1CjtjxA==
 
+"@solidjs/testing-library@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@solidjs/testing-library/-/testing-library-0.6.0.tgz#a80996cfe61fb136a96c9fa3ac6594c21c80ae6d"
+  integrity sha512-Hnm1lF2qkwyqYb2BM2pZw1gw1yzJUrFgfpvTSHi/iVRHpeZbSbPgPMCQSsLN5+iCSCYepAi7D8MBmWoH3M7voA==
+  dependencies:
+    "@testing-library/dom" "^8.19.0"
+
 "@stitches/core@^1.2.8":
   version "1.2.8"
   resolved "https://registry.yarnpkg.com/@stitches/core/-/core-1.2.8.tgz#dce3b8fdc764fbc6dbea30c83b73bfb52cf96173"

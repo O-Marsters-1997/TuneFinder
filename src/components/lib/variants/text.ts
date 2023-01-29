@@ -16,6 +16,7 @@ export type TextProps = {
   variant?: CSS.TextVariants;
   as?: CSS.TextComponents;
   children?: JSX.Element;
+  class?: string;
 } & StyleTextProps;
 
 const textBaseMixin = (props: TextProps): string => {

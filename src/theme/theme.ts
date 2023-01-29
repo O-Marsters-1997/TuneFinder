@@ -1,5 +1,5 @@
 import { DefaultTheme } from "solid-styled-components";
-import useComponentVariants from "@hooks/useComponentVariants";
+import useComponentVariants from "../hooks/useComponentVariants";
 
 const { viewVariantsMap, textVariantsMap, buttonVariantsMap } =
   useComponentVariants;
