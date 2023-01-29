@@ -6,12 +6,15 @@ import ArtistItem from "@components/ArtistItem";
 import Text from "@common/Text";
 import Button from "@common/Button";
 import View from "@common/View";
+import useLogger from "@hooks/useLogger";
 
 const StyledText = styled(Text)`
   color: green;
 `;
 
 const ArtistList: Component = () => {
+  const logger = useLogger();
+
   return (
     <>
       <For each={artists()} fallback={<div>Artists are loading</div>}>
@@ -25,7 +28,7 @@ const ArtistList: Component = () => {
       <Button
         text="please click me boy"
         onClick={() => {
-          console.log("testing this pattern");
+          logger.log("testing this pattern");
         }}
         variant="rounded"
         colorVariant="green"
@@ -33,7 +36,7 @@ const ArtistList: Component = () => {
       <Button
         text="please click me boy"
         onClick={() => {
-          console.log("testing this pattern");
+          logger.log("testing this pattern");
         }}
         variant="rounded"
         colorVariant="green"

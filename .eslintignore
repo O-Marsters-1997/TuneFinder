@@ -1,0 +1,2 @@
+# Where logging should be allowed
+./src/hooks/useLogger.ts
