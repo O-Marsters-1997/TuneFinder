@@ -1,8 +1,7 @@
 import type { Component, JSX } from "solid-js";
 import { styled } from "solid-styled-components";
 import { css } from "@emotion/css";
-import { getColorVariant } from "@utils/style/style.helpers";
-import { componentVariantsHoc } from "@base/utils/style/hoc";
+import componentVariantsHoc from "@base/utils/style/hoc";
 import { getTextVariant } from "@utils/style/style.helpers";
 
 type StyleTextProps = {
@@ -24,61 +23,81 @@ export type TextProps = {
 const MyText = styled.p<TextProps>`
   color: ${({ colorvariant }) => colorvariant && colorvariant};
   color: ${({ lineheight }) => lineheight && lineheight};
-  font-style: ${({ fontStyle }) => (fontStyle ? fontStyle : "normal")};
+  font-style: ${({ fontStyle }) => fontStyle ?? fontStyle};
 `;
 
 const TextOtherStyles = (props: TextProps) => {
   return {
-    h1: css`
-      font-family: "Arial";
-      font-size: 62px;
-      font-weight: 800;
-    `,
-    h2: css`
-      font-family: "Arial";
-      font-size: 32px;
-      font-weight: 800;
-    `,
-    h3: css`
-      font-family: "Arial";
-      font-size: 32px;
-      font-weight: 800;
-    `,
-    h4: css`
-      font-family: "Arial";
-      font-size: 32px;
-      font-weight: 800;
-    `,
-    h5: css`
-      font-family: "Arial";
-      font-size: 32px;
-      font-weight: 800;
-    `,
-    h6: css`
-      font-family: "Arial";
-      font-size: 32px;
-      font-weight: 800;
-    `,
-    body2: css`
-      font-family: "Arial";
-      font-size: 32px;
-      font-weight: 800;
-    `,
-    caption: css`
-      font-family: "Arial";
-      font-size: 32px;
-      font-weight: 800;
-    `,
-    subtitle1: css`
-      font-family: "Arial";
-      font-size: 32px;
-      font-weight: 800;
-    `,
-    subtitle2: css`
-      font-family: "Arial";
-      font-size: 32px;
-      font-weight: 800;
-    `,
+    h1:
+      props &&
+      css`
+        font-family: "Arial";
+        font-size: 62px;
+        font-weight: 800;
+      `,
+    h2:
+      props &&
+      css`
+        font-family: "Arial";
+        font-size: 32px;
+        font-weight: 800;
+      `,
+    h3:
+      props &&
+      css`
+        font-family: "Arial";
+        font-size: 32px;
+        font-weight: 800;
+      `,
+    h4:
+      props &&
+      css`
+        font-family: "Arial";
+        font-size: 32px;
+        font-weight: 800;
+      `,
+    h5:
+      props &&
+      css`
+        font-family: "Arial";
+        font-size: 32px;
+        font-weight: 800;
+      `,
+    h6:
+      props &&
+      css`
+        font-family: "Arial";
+        font-size: 32px;
+        font-weight: 800;
+      `,
+    body2:
+      props &&
+      css`
+        font-family: "Arial";
+        font-size: 32px;
+        font-weight: 800;
+      `,
+    caption:
+      props &&
+      css`
+        font-family: "Arial";
+        font-size: 32px;
+        font-weight: 800;
+      `,
+    subtitle1:
+      props &&
+      css`
+        font-family: "Arial";
+        font-size: 32px;
+        font-weight: 800;
+      `,
+    subtitle2:
+      props &&
+      css`
+        font-family: "Arial";
+        font-size: 32px;
+        font-weight: 800;
+      `,
   };
 };
 

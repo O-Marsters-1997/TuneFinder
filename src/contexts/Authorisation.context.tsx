@@ -1,4 +1,4 @@
-import type { Component } from "solid-js";
+import type { Component, JSX } from "solid-js";
 import {
   createSignal,
   onMount,
@@ -6,8 +6,8 @@ import {
   createContext,
   useContext,
   Show,
-  JSX,
 } from "solid-js";
+import useLogger from "@hooks/useLogger";
 
 const AuthorisationContext = createContext();
 
@@ -18,6 +18,7 @@ type Props = {
 export const AuthorisationProvider: Component<Props> = (props) => {
   const [authParams, setAuthParams] = createSignal<AuthParams | undefined>();
   const [token, setToken] = createSignal<string | undefined>();
+  const logger = useLogger();
 
   const paramsObj = {
     clientSecret: import.meta.env.VITE_CLIENT_SECRET,
@@ -47,7 +48,7 @@ export const AuthorisationProvider: Component<Props> = (props) => {
       const data = await accessToken.json();
       return data?.access_token;
     } catch (err) {
-      console.log(err);
+      logger.error(err);
     }
     return token;
   }

@@ -6,7 +6,6 @@ import Text from "@common/Text";
 import Button from "@common/Button";
 import View from "@common/View";
 import useLogger from "@hooks/useLogger";
-import styled from "@emotion/styled";
 
 const ArtistList: Component = () => {
   const logger = useLogger();
@@ -30,7 +29,7 @@ const ArtistList: Component = () => {
         colorVariant="green"
       />
 
-      <View height="500px" width="500px" as="div" variant="random" />
+      <View height="500px" width="500px" as="div" variant="other" />
     </>
   );
 };

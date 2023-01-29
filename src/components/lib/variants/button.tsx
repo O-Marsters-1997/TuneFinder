@@ -3,7 +3,7 @@ import type { Component, JSX } from "solid-js";
 import { styled } from "solid-styled-components";
 import { css } from "@emotion/css";
 import { ButtonProps as SolidButtonProps } from "@suid/material/Button";
-import { componentVariantsHoc } from "@utils/style/hoc";
+import componentVariantsHoc from "@utils/style/hoc";
 
 export type ButtonProps = {
   text: string;
@@ -22,10 +22,12 @@ const MyButton = styled.button<ButtonProps>`
 
 const ButtonOtherStyles = (props: ButtonProps) => {
   return {
-    rounded: css`
-      border-radius: 50%;
-      border: 2px solid orange;
-    `,
+    rounded:
+      props &&
+      css`
+        border-radius: 50%;
+        border: 2px solid orange;
+      `,
   };
 };
 

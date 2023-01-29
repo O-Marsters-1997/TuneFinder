@@ -2,14 +2,15 @@ import type { Component } from "solid-js";
 
 type ModifiedState = { class: string };
 
-export const componentVariantsHoc = (
+const componentVariantsHoc = (
   OriginalComponent: Component<typeof props>,
   modifiedState: ModifiedState,
   props: any,
 ) => {
-  console.log(modifiedState);
-  const ModifiedComponent: Component<typeof props> = (props) => {
+  const ModifiedComponent: Component<typeof props> = () => {
     return <OriginalComponent {...props} {...modifiedState} />;
   };
   return ModifiedComponent(props);
 };
+
+export default componentVariantsHoc;

@@ -5,7 +5,6 @@ import { ButtonProps } from "../lib/variants/button";
 
 const Button: Component<ButtonProps> = (props) => {
   const ButtonVariant = getButton(props.variant ?? buttonVariants.base);
-  console.log(props.variant);
 
   return (
     <ButtonVariant

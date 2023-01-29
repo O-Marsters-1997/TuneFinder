@@ -2,7 +2,7 @@ import type { Component, JSX } from "solid-js";
 import { styled, DefaultTheme } from "solid-styled-components";
 import { css } from "@emotion/css";
 import { viewComponents } from "@myTypes/constants";
-import { componentVariantsHoc } from "@utils/style/hoc";
+import componentVariantsHoc from "@utils/style/hoc";
 
 type StyleViewProps = {
   height?: string;
@@ -31,12 +31,16 @@ const MyView = styled.div<ViewProps>`
 
 const ViewOtherStyles = (props: ViewProps) => {
   return {
-    other: css`
-      border: 2px solid orange;
-    `,
-    random: css`
-      border: 50px solid yellow;
-    `,
+    other:
+      props &&
+      css`
+        border: 2px solid orange;
+      `,
+    random:
+      props &&
+      css`
+        border: 50px solid yellow;
+      `,
   };
 };
 
