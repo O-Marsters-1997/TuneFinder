@@ -13,6 +13,8 @@ type StyleViewProps = {
   style?: JSX.CSSProperties;
 };
 
+type ModifiedState = { class: string };
+
 export type ViewProps = {
   variant?: CSS.ViewVariants;
   children?: JSX.Element;
@@ -32,15 +34,13 @@ const ViewStyles = (props: ViewProps) => `
       };
       `;
 
-const ViewOtherBaseStyles = (props: ViewProps) => {
-  return css`
-    height: ${props.height && props.height};
-    width: ${props.width && props.width};
-    max-height: ${props.maxHeight && props.maxHeight};
-    max-width: ${props.maxWidth && props.maxWidth};
-    background-color: red;
-  `;
-};
+const MyView = styled.div<ViewProps>`
+  height: ${({ height }) => height && height};
+  width: ${({ width }) => width && width};
+  max-height: ${({ maxHeight }) => maxHeight && maxHeight};
+  max-width: ${({ maxWidth }) => maxWidth && maxWidth};
+  background-color: blue;
+`;
 
 const ViewOtherStyles = (props: ViewProps) => {
   return {
@@ -50,18 +50,9 @@ const ViewOtherStyles = (props: ViewProps) => {
   };
 };
 
-// const OtherStyles = (props: ViewProps) => {
-//   return `
-//     background-color: ${
-//       props.backgroundColor
-//         ? props.backgroundColor
-//         : props.theme?.palette.primary.main.base
-//     };
-//   `;
-// };
 const withModifiedState = (
   OriginalComponent: Component<ViewProps>,
-  modifiedState: any,
+  modifiedState: ModifiedState,
   props: ViewProps,
 ) => {
   const ModifiedComponent: Component<ViewProps> = (props) => {
@@ -70,15 +61,7 @@ const withModifiedState = (
   return ModifiedComponent(props);
 };
 
-const MyView = styled.div<ViewProps>`
-  height: ${({ height }) => height && height};
-  width: ${({ width }) => width && width};
-  max-height: ${({ maxHeight }) => maxHeight && maxHeight};
-  max-width: ${({ maxWidth }) => maxWidth && maxWidth};
-  background-color: blue;
-`;
-
-export const MyBaseComponent: Component<ViewProps> = (props) => {
+export const ViewBase: Component<ViewProps> = (props) => {
   return (
     <MyView
       variant={props.variant}
@@ -89,24 +72,13 @@ export const MyBaseComponent: Component<ViewProps> = (props) => {
       as={props.as ?? viewComponents.div}
       class={props.class}
       style={props.style}
-    >
-      {props.children}
-    </MyView>
+    />
   );
 };
 
-// export const MyModifiedComponent: Component<ViewProps> = (props) => {
-//   const modifiedState = { cclass: ViewOtherStyles(props).otherlass: ViewOtherStyles(props).other };
-//   return (
-//     <MyBaseComponent {...props} {...modifiedState}>
-//       {props.children}
-//     </MyBaseComponent>
-//   );
-// };
-
-export const MyModifiedComponent = (props: ViewProps) => {
+export const ViewOther = (props: ViewProps) => {
   return withModifiedState(
-    MyBaseComponent,
+    ViewBase,
     {
       class: ViewOtherStyles(props).other,
     },
@@ -114,14 +86,14 @@ export const MyModifiedComponent = (props: ViewProps) => {
   );
 };
 
-const ViewBase = styled.div<ViewProps>`
-  ${(props) => ViewStyles(props)}
-`;
+// const ViewBase = styled.div<ViewProps>`
+//   ${(props) => ViewStyles(props)}
+// `;
 
-const ViewOther = styled(ViewBase)<ViewProps>`
-  ${(props) => ViewStyles(props)};
-  border: 2px solid orange;
-`;
+// const ViewOther = styled(ViewBase)<ViewProps>`
+//   ${(props) => ViewStyles(props)};
+//   border: 2px solid orange;
+// `;
 
 export const viewVariantsMap = {
   base: ViewBase,
