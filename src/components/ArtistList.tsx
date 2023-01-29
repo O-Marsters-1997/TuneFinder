@@ -1,5 +1,4 @@
 import type { Component } from "solid-js";
-import { styled } from "solid-styled-components";
 import { For } from "solid-js";
 import { artists } from "@components/Searchbar";
 import ArtistItem from "@components/ArtistItem";
@@ -7,10 +6,8 @@ import Text from "@common/Text";
 import Button from "@common/Button";
 import View from "@common/View";
 import useLogger from "@hooks/useLogger";
-
-const StyledText = styled(Text)`
-  color: green;
-`;
+import { MyModifiedComponent } from "./lib/variants/view";
+import styled from "@emotion/styled";
 
 const ArtistList: Component = () => {
   const logger = useLogger();
@@ -24,7 +21,7 @@ const ArtistList: Component = () => {
           </>
         )}
       </For>
-      <StyledText text=" what are you talking about" />
+      <Text text=" what are you talking about" />
       <Button
         text="please click me boy"
         onClick={() => {
@@ -41,8 +38,7 @@ const ArtistList: Component = () => {
         variant="rounded"
         colorVariant="green"
       />
-      <View height="500px" width="500px" variant="other" />
-      <div>Hello world</div>
+      <MyModifiedComponent height="500px" width="500px" as="div" />
     </>
   );
 };

@@ -27,6 +27,7 @@
     "@solidjs/testing-library": "^0.6.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@types/node": "^18.11.18",
+    "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
     "eslint-config-airbnb": "^19.0.4",
@@ -52,6 +53,8 @@
     "vitest": "^0.28.3"
   },
   "dependencies": {
+    "@emotion/css": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@solidjs/router": "^0.7.0",
     "@stitches/core": "^1.2.8",
     "@suid/icons-material": "^0.5.5",
@@ -63,6 +66,7 @@
     "solid-styled-components": "^0.28.5",
     "solid-transition-group": "^0.0.12",
     "solid-use": "^0.6.2",
+    "styled-components": "^5.3.6",
     "vite": "^4.0.3"
   },
   "husky": {
