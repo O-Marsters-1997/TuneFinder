@@ -60,6 +60,7 @@ export const components: CSS.ComponentsMap = {
 export const viewVariants: CSS.ViewVariantsMap = {
   base: "base",
   other: "other",
+  random: "random",
 };
 
 // Buttons

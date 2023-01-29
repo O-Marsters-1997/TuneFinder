@@ -13,7 +13,7 @@ const View: Component<ViewProps> = (props) => {
       width={props.width}
       maxWidth={props.maxWidth}
       maxHeight={props.maxHeight}
-      as={props.as ?? viewComponents.div}
+      as={props.as}
       class={props.class}
       style={props.style}
     >

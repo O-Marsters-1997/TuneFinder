@@ -19,6 +19,7 @@ export const theme: DefaultTheme = {
     view: {
       base: viewVariantsMap.base,
       other: viewVariantsMap.other,
+      random: viewVariantsMap.random,
     },
     text: {
       body1: textVariantsMap.body1,

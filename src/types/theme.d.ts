@@ -13,6 +13,7 @@ declare module "solid-styled-components" {
       view: {
         base: Component<ViewProps>;
         other: Component<ViewProps>;
+        random: Component<ViewProps>;
       };
       text: {
         body1: Component<TextProps>;
