@@ -11,6 +11,7 @@ export type ButtonProps = {
   variant?: CSS.ButtonVariants;
   colorVariant?: string;
   children?: JSX.Element;
+  class?: string;
 } & Omit<SolidButtonProps, "variant" | "type">;
 
 const MyButton = styled.button<ButtonProps>`
@@ -34,6 +35,7 @@ export const ButtonBase: Component<ButtonProps> = (props) => {
       text={props.text}
       variant={props.variant}
       onClick={props.onClick}
+      class={props.class}
       colorVariant={props.colorVariant}
     >
       {props.text}

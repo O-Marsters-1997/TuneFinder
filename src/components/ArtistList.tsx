@@ -20,7 +20,7 @@ const ArtistList: Component = () => {
           </>
         )}
       </For>
-      <Text text=" what are you talking about" />
+      <Text text=" what are you talking about" variant="h3" />
       <Button
         text="please click me boy"
         onClick={() => {
@@ -29,14 +29,7 @@ const ArtistList: Component = () => {
         variant="rounded"
         colorVariant="green"
       />
-      <Button
-        text="please click me boy"
-        onClick={() => {
-          logger.log("testing this pattern");
-        }}
-        variant="rounded"
-        colorVariant="green"
-      />
+
       <View height="500px" width="500px" as="div" variant="random" />
     </>
   );

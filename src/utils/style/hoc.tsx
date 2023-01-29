@@ -7,6 +7,7 @@ export const componentVariantsHoc = (
   modifiedState: ModifiedState,
   props: any,
 ) => {
+  console.log(modifiedState);
   const ModifiedComponent: Component<typeof props> = (props) => {
     return <OriginalComponent {...props} {...modifiedState} />;
   };
