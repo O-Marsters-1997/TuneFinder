@@ -65,7 +65,7 @@ declare global {
     // Variants
     // Buttons
 
-    type ViewVariants = "base" | "other";
+    type ViewVariants = "base" | "other" | "random";
 
     type ViewVariantsMap = { [variant in ViewVariants]: ViewVariants };
 

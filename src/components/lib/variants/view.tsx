@@ -22,18 +22,6 @@ export type ViewProps = {
   class?: string;
 } & StyleViewProps;
 
-const ViewStyles = (props: ViewProps) => `
-      height: ${props.height && props.height};
-      width: ${props.width && props.width};
-      max-height: ${props.maxHeight && props.maxHeight};
-      max-width: ${props.maxWidth && props.maxWidth};
-      background-color: ${
-        props.backgroundColor
-          ? props.backgroundColor
-          : props.theme?.palette.primary.main.base
-      };
-      `;
-
 const MyView = styled.div<ViewProps>`
   height: ${({ height }) => height && height};
   width: ${({ width }) => width && width};
@@ -47,10 +35,13 @@ const ViewOtherStyles = (props: ViewProps) => {
     other: css`
       border: 2px solid orange;
     `,
+    random: css`
+      border: 50px solid red;
+    `,
   };
 };
 
-const withModifiedState = (
+const componentVariantsHoc = (
   OriginalComponent: Component<ViewProps>,
   modifiedState: ModifiedState,
   props: ViewProps,
@@ -76,8 +67,8 @@ export const ViewBase: Component<ViewProps> = (props) => {
   );
 };
 
-export const ViewOther = (props: ViewProps) => {
-  return withModifiedState(
+const ViewOther = (props: ViewProps) => {
+  return componentVariantsHoc(
     ViewBase,
     {
       class: ViewOtherStyles(props).other,
@@ -86,16 +77,18 @@ export const ViewOther = (props: ViewProps) => {
   );
 };
 
-// const ViewBase = styled.div<ViewProps>`
-//   ${(props) => ViewStyles(props)}
-// `;
-
-// const ViewOther = styled(ViewBase)<ViewProps>`
-//   ${(props) => ViewStyles(props)};
-//   border: 2px solid orange;
-// `;
+const ViewRandom = (props: ViewProps) => {
+  return componentVariantsHoc(
+    ViewBase,
+    {
+      class: ViewOtherStyles(props).random,
+    },
+    props,
+  );
+};
 
 export const viewVariantsMap = {
   base: ViewBase,
   other: ViewOther,
+  random: ViewRandom,
 };
