@@ -10,7 +10,6 @@ export const MyView = styled.div<ViewProps>`
   width: ${({ width }) => width && width};
   max-height: ${({ maxHeight }) => maxHeight && maxHeight};
   max-width: ${({ maxWidth }) => maxWidth && maxWidth};
-  background-color: blue;
 `;
 
 const ViewOtherStyles = (props: ViewProps) => {

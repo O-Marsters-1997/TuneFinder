@@ -7,7 +7,7 @@ import { getTextVariant } from "@utils/style/style.helpers";
 
 const MyText = styled.p<TextProps>`
   color: ${({ colorvariant }) => colorvariant && colorvariant};
-  color: ${({ lineheight }) => lineheight && lineheight};
+  line-height: ${({ lineheight }) => lineheight && lineheight};
   font-style: ${({ fontStyle }) => fontStyle && fontStyle};
   line-height: ${({ lineheight }) => lineheight && lineheight}em;
 `;

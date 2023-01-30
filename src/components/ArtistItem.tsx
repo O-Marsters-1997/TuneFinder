@@ -1,6 +1,9 @@
-import { Component } from "solid-js";
+import type { Component } from "solid-js";
+import { createSignal } from "solid-js";
 import Text from "@common/Text";
+import { RowContainer } from "@components/lib";
 import { artistId, setArtistId } from "@state/artistId";
+import Button from "@common/Button";
 
 type Props = {
   artist: any;
@@ -18,17 +21,13 @@ const ArtistItem: Component<Props> = (props) => {
 
   return (
     <>
-      <div style={{ display: "flex" }}>
+      <RowContainer>
         <Text text={artist.name} />
         {artistIsSelected() && (
-          <Text
-            text="this artist is selected"
-            variant="h1"
-            colorvariant="green"
-          />
+          <Text text="this artist is selected" colorvariant="green" />
         )}
-        <button onClick={handleSelectArtist}>click me</button>
-      </div>
+        <Button text="click me" onClick={handleSelectArtist} />
+      </RowContainer>
       ,
     </>
   );
