@@ -1,11 +1,11 @@
 import type { Component } from "solid-js";
 import { For } from "solid-js";
+import useLogger from "@hooks/useLogger";
 import { artists } from "@components/Searchbar";
 import ArtistItem from "@components/ArtistItem";
 import Text from "@common/Text";
 import Button from "@common/Button";
 import View from "@common/View";
-import useLogger from "@hooks/useLogger";
 
 const ArtistList: Component = () => {
   const logger = useLogger();
@@ -29,7 +29,7 @@ const ArtistList: Component = () => {
         colorVariant="green"
       />
 
-      <View height="500px" width="500px" as="div" variant="other" />
+      <View height="500px" width="500px" variant="random" />
     </>
   );
 };

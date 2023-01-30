@@ -5,7 +5,7 @@ import { ViewProps } from "@components/common/View";
 import { viewComponents } from "@myTypes/constants";
 import componentVariantsHoc from "@utils/style/hoc";
 
-const MyView = styled.div<ViewProps>`
+export const MyView = styled.div<ViewProps>`
   height: ${({ height }) => height && height};
   width: ${({ width }) => width && width};
   max-height: ${({ maxHeight }) => maxHeight && maxHeight};
@@ -28,7 +28,7 @@ const ViewOtherStyles = (props: ViewProps) => {
   };
 };
 
-const ViewBase: Component<ViewProps> = (props) => {
+export const ViewBase: Component<ViewProps> = (props) => {
   return (
     <MyView
       variant={props.variant}
