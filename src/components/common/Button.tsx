@@ -1,7 +1,16 @@
-import type { Component } from "solid-js";
+import type { Component, JSX } from "solid-js";
 import { buttonVariants } from "@myTypes/constants";
 import { getButton } from "@base/theme/variant.helpers";
-import { ButtonProps } from "../lib/variants/button";
+import { ButtonProps as SolidButtonProps } from "@suid/material/Button";
+
+export type ButtonProps = {
+  text: string;
+  onClick: () => void;
+  variant?: CSS.ButtonVariants;
+  colorVariant?: string;
+  children?: JSX.Element;
+  class?: string;
+} & Omit<SolidButtonProps, "variant" | "type">;
 
 const Button: Component<ButtonProps> = (props) => {
   const ButtonVariant = getButton(props.variant ?? buttonVariants.base);

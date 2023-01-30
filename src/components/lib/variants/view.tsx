@@ -1,25 +1,9 @@
-import type { Component, JSX } from "solid-js";
-import { styled, DefaultTheme } from "solid-styled-components";
+import type { Component } from "solid-js";
+import { styled } from "solid-styled-components";
 import { css } from "@emotion/css";
+import { ViewProps } from "@components/common/View";
 import { viewComponents } from "@myTypes/constants";
 import componentVariantsHoc from "@utils/style/hoc";
-
-type StyleViewProps = {
-  height?: string;
-  width?: string;
-  maxWidth?: string;
-  maxHeight?: string;
-  backgroundColor?: string;
-  theme?: DefaultTheme;
-  style?: JSX.CSSProperties;
-};
-
-export type ViewProps = {
-  variant?: CSS.ViewVariants;
-  children?: JSX.Element;
-  as?: CSS.ViewComponents;
-  class?: string;
-} & StyleViewProps;
 
 const MyView = styled.div<ViewProps>`
   height: ${({ height }) => height && height};
@@ -44,7 +28,7 @@ const ViewOtherStyles = (props: ViewProps) => {
   };
 };
 
-export const ViewBase: Component<ViewProps> = (props) => {
+const ViewBase: Component<ViewProps> = (props) => {
   return (
     <MyView
       variant={props.variant}
@@ -79,8 +63,10 @@ const ViewRandom = (props: ViewProps) => {
   );
 };
 
-export const viewVariantsMap = {
+const viewVariantsMap = {
   base: ViewBase,
   other: ViewOther,
   random: ViewRandom,
 };
+
+export default viewVariantsMap;

@@ -19,7 +19,7 @@ const ArtistList: Component = () => {
           </>
         )}
       </For>
-      <Text text=" what are you talking about" variant="h3" />
+      <Text text=" what are you talking about" variant="h2" />
       <Button
         text="please click me boy"
         onClick={() => {

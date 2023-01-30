@@ -1,24 +1,9 @@
-import type { Component, JSX } from "solid-js";
+import type { Component } from "solid-js";
 import { styled } from "solid-styled-components";
 import { css } from "@emotion/css";
+import { TextProps } from "@components/common/Text";
 import componentVariantsHoc from "@base/utils/style/hoc";
 import { getTextVariant } from "@utils/style/style.helpers";
-
-type StyleTextProps = {
-  colorvariant?: string;
-  lineheight?: number;
-  sizeadjust?: number;
-  fontStyle?: CSS.FontStyle;
-  style?: JSX.CSSProperties;
-};
-
-export type TextProps = {
-  text: string;
-  variant?: CSS.TextVariants;
-  as?: CSS.TextComponents;
-  children?: JSX.Element;
-  class?: string;
-} & StyleTextProps;
 
 const MyText = styled.p<TextProps>`
   color: ${({ colorvariant }) => colorvariant && colorvariant};
@@ -219,7 +204,7 @@ const TextSubtitle2 = (props: TextProps) => {
   );
 };
 
-export const textVariantsMap = {
+const textVariantsMap = {
   body1: TextBase,
   h1: TextH1,
   h2: TextH2,
@@ -232,3 +217,5 @@ export const textVariantsMap = {
   subtitle1: TextSubtitle1,
   subtitle2: TextSubtitle2,
 };
+
+export default textVariantsMap;

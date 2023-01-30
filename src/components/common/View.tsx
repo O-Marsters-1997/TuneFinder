@@ -1,7 +1,24 @@
-import type { Component } from "solid-js";
-import { ViewProps } from "components/lib/variants/view";
-import { viewVariants, viewComponents } from "@myTypes/constants";
+import type { Component, JSX } from "solid-js";
+import { DefaultTheme } from "solid-styled-components";
+import { viewVariants } from "@myTypes/constants";
 import { getView } from "@theme/variant.helpers";
+
+type StyleViewProps = {
+  height?: string;
+  width?: string;
+  maxWidth?: string;
+  maxHeight?: string;
+  backgroundColor?: string;
+  theme?: DefaultTheme;
+  style?: JSX.CSSProperties;
+};
+
+export type ViewProps = {
+  variant?: CSS.ViewVariants;
+  children?: JSX.Element;
+  as?: CSS.ViewComponents;
+  class?: string;
+} & StyleViewProps;
 
 const View: Component<ViewProps> = (props) => {
   const ViewVariant = getView(props.variant ?? viewVariants.base);

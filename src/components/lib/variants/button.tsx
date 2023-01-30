@@ -1,18 +1,9 @@
 // import { styled } from "solid-styled-components";
-import type { Component, JSX } from "solid-js";
+import type { Component } from "solid-js";
 import { styled } from "solid-styled-components";
 import { css } from "@emotion/css";
-import { ButtonProps as SolidButtonProps } from "@suid/material/Button";
+import { ButtonProps } from "@components/common/Button";
 import componentVariantsHoc from "@utils/style/hoc";
-
-export type ButtonProps = {
-  text: string;
-  onClick: () => void;
-  variant?: CSS.ButtonVariants;
-  colorVariant?: string;
-  children?: JSX.Element;
-  class?: string;
-} & Omit<SolidButtonProps, "variant" | "type">;
 
 const MyButton = styled.button<ButtonProps>`
   background-color: blue;
@@ -31,7 +22,7 @@ const ButtonOtherStyles = (props: ButtonProps) => {
   };
 };
 
-export const ButtonBase: Component<ButtonProps> = (props) => {
+const ButtonBase: Component<ButtonProps> = (props) => {
   return (
     <MyButton
       text={props.text}
@@ -55,7 +46,9 @@ const ButtonRounded = (props: ButtonProps) => {
   );
 };
 
-export const buttonVariantsMap = {
+const buttonVariantsMap = {
   base: ButtonBase,
   rounded: ButtonRounded,
 };
+
+export default buttonVariantsMap;
