@@ -8,6 +8,7 @@ import componentVariantsHoc from "@utils/style/hoc";
 const MyButton = styled.button<ButtonProps>`
   cursor: pointer;
   color: ${({ colorVariant }) => colorVariant && colorVariant};
+  border: none;
 `;
 
 const ButtonOtherStyles = (props: ButtonProps) => {

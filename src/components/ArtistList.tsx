@@ -6,6 +6,8 @@ import ArtistItem from "@components/ArtistItem";
 import Button from "@common/Button";
 
 const ArtistList: Component = () => {
+  const getPlaylists = () => {};
+
   return (
     <>
       <For each={artists()} fallback={<div>Artists are loading</div>}>
@@ -15,7 +17,11 @@ const ArtistList: Component = () => {
           </>
         )}
       </For>
-      <Button text="click me" onClick={() => console.log("hello world")} />
+      <Button
+        text="click me"
+        onClick={() => console.log("hello world")}
+        variant="rounded"
+      />
     </>
   );
 };
