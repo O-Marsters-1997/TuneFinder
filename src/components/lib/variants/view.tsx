@@ -48,7 +48,7 @@ const ViewOther = (props: ViewProps) => {
     {
       class: ViewOtherStyles(props).other,
     },
-    props,
+    props
   );
 };
 
@@ -58,7 +58,7 @@ const ViewRandom = (props: ViewProps) => {
     {
       class: ViewOtherStyles(props).random,
     },
-    props,
+    props
   );
 };
 

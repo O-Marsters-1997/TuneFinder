@@ -12,6 +12,8 @@ const MyText = styled.p<TextProps>`
   line-height: ${({ lineheight }) => lineheight && lineheight}em;
 `;
 
+const greeting = "hello";
+
 const TextOtherStyles = (props: TextProps) => {
   return {
     h1:
@@ -110,7 +112,7 @@ const TextH1 = (props: TextProps) => {
     {
       class: TextOtherStyles(props).h1,
     },
-    props,
+    props
   );
 };
 
@@ -120,7 +122,7 @@ const TextH2 = (props: TextProps) => {
     {
       class: TextOtherStyles(props).h2,
     },
-    props,
+    props
   );
 };
 
@@ -130,7 +132,7 @@ const TextH3 = (props: TextProps) => {
     {
       class: TextOtherStyles(props).h3,
     },
-    props,
+    props
   );
 };
 
@@ -140,7 +142,7 @@ const TextH4 = (props: TextProps) => {
     {
       class: TextOtherStyles(props).h4,
     },
-    props,
+    props
   );
 };
 
@@ -150,7 +152,7 @@ const TextH5 = (props: TextProps) => {
     {
       class: TextOtherStyles(props).h5,
     },
-    props,
+    props
   );
 };
 
@@ -160,7 +162,7 @@ const TextH6 = (props: TextProps) => {
     {
       class: TextOtherStyles(props).h6,
     },
-    props,
+    props
   );
 };
 
@@ -170,7 +172,7 @@ const TextBody2 = (props: TextProps) => {
     {
       class: TextOtherStyles(props).body2,
     },
-    props,
+    props
   );
 };
 
@@ -180,7 +182,7 @@ const TextCaption = (props: TextProps) => {
     {
       class: TextOtherStyles(props).caption,
     },
-    props,
+    props
   );
 };
 
@@ -190,7 +192,7 @@ const TextSubtitle1 = (props: TextProps) => {
     {
       class: TextOtherStyles(props).subtitle1,
     },
-    props,
+    props
   );
 };
 
@@ -200,7 +202,7 @@ const TextSubtitle2 = (props: TextProps) => {
     {
       class: TextOtherStyles(props).subtitle2,
     },
-    props,
+    props
   );
 };
 

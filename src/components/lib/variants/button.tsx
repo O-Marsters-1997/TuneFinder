@@ -42,7 +42,7 @@ const ButtonRounded = (props: ButtonProps) => {
     {
       class: ButtonOtherStyles(props).rounded,
     },
-    props,
+    props
   );
 };
 
